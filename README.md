@@ -1,4 +1,4 @@
-DK Hostmaster Name Service Specification
+# DK Hostmaster Name Service Specification
 
 2016-06-28
 Revision: 1.0 *DRAFT*

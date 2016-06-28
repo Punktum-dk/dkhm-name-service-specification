@@ -27,11 +27,23 @@ General specification of some of the technical aspects of the DK Hostmaster DNS
 <a name="about-this-document"></a>
 ## About this document
 
+This specification describes the DK Hostmaster General name service.
+
+This document is owned and maintained by DK Hostmaster A/S and must not be distributed without this information.
+
+All examples provided in the document are fabricated or changed from real data to demonstrate use etc. any resemblence to actual data are coincidental.
+
+Printable version can be obtained via [this link](https://gitprint.com/DK-Hostmaster/dkhm-name-service-specification/blob/master/README.md), using the gitprint service.
+
 <a name="license"></a>
 ## License
 
+This document is copyright by DK Hostmaster A/S and is licensed under the MIT License, please see the separate LICENSE file for details.
+
 <a name="the-dk-registry-in-brief"></a>
 ## The .dk Registry in Brief
+
+DK Hostmaster is the registry for the ccTLD for Denmark (dk). The current model used in Denmark is based on a sole registry, with DK Hostmaster maintaining the central DNS registry.
 
 <a name="name-service"></a>
 # Name Service

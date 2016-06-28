@@ -18,7 +18,6 @@ Revision: 1.0 *DRAFT*
 
 <!-- /MarkdownTOC -->
 
-
 <a name="introduction"></a>
 # Introduction
 
@@ -50,6 +49,17 @@ DK Hostmaster is the registry for the ccTLD for Denmark (dk). The current model 
 
 <a name="domain-names"></a>
 ## Domain Names
+
+A domain name can consist of the following characters:
+
+- `a-z`
+- `æ`, `ø`, `å`, `ö`, `ä`, `ü` and `é`.
+- `0-9`
+- `-` (hyphen)
+
+
+- Hyphen cannot be placed first or last in the domain name.
+- A domain name can not have 2 initial alphanumeric characters followed by 2 hyphens, such as: `xn--4cabco7dk5a.dk`, the IDN encoded version of the domain name: `æøåöäüé.dk` since this would indicate IDN encoding (punycode)
 
 <a name="glue-records"></a>
 ## Glue Records

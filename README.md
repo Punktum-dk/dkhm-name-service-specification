@@ -1,6 +1,6 @@
 # DK Hostmaster Name Service Specification
 
-2016-06-28
+2016-09-14
 Revision: 1.0 *DRAFT*
 
 # Table of Contents
@@ -14,6 +14,10 @@ Revision: 1.0 *DRAFT*
 - [Name Service](#name-service)
     - [Domain Names](#domain-names)
     - [Glue Records](#glue-records)
+- [DNSSEC](#dnssec)
+    - [Supported DNSSEC implementations](#supported-dnssec-implementations)
+    - [Supported Algorithms](#supported-algorithms)
+    - [Supported Digest Types](#supported-digest-types)
 - [References](#references)
 
 <!-- /MarkdownTOC -->
@@ -80,9 +84,49 @@ An example of when a glue record is not inserted to the DK zone:
 
 Please note that the above names are examples and do not relate to active domain names.
 
+<a name="dnssec"></a>
+# DNSSEC 
+
+<a name="supported-dnssec-implementations"></a>
+## Supported DNSSEC implementations
+
+In accordance with [RFC:5910][RFC:5910]. DK Hostmaster only support *DS* and not *DNSKEY*. 
+
+In addition the maximum signature lifetime is not supported, for *EPP* please see [section 3.3][RFC:5910_section_3.3] in [RFC:5910][RFC:5910].
+
+<a name="supported-algorithms"></a>
+## Supported Algorithms
+
+DK Hostmaster currently support the following algorithms from the [IANA algorithm listing][IANA algorithm listing]:
+
+- 3 DSA (DSA/SHA1)
+- 5 RSASHA1 (RSA/SHA-1)
+- 6 DSA-NSEC3-SHA1 (DSA-NSEC3-SHA1)
+- 7 RSASHA1-NSEC3-SHA1 (RSASHA1-NSEC3-SHA1)
+- 8 RSASHA256 (RSA/SHA-256)
+- 10 RSASHA512 (RSA/SHA-512)
+
+<a name="supported-digest-types"></a>
+## Supported Digest Types
+
+- 1 SHA-1
+- 2 SHA-256
+
 <a name="references"></a>
 # References
 
 * [DNS Glue RR Survey and Terminology Clarification][draft-koch-dns-glue-clarifications]
 
+* [RFC:5910 Domain Name System (DNS) Security Extensions Mapping for the Extensible Provisioning Protocol (EPP)][RFC:5910]
+
+* [Domain Name System Security (DNSSEC) Algorithm Numbers][IANA algorithm listing]
+
 [draft-koch-dns-glue-clarifications]: https://tools.ietf.org/html/draft-koch-dns-glue-clarifications-04#page-5
+
+[draft-koch-dns-glue-clarifications]: https://tools.ietf.org/html/draft-koch-dns-glue-clarifications-04#page-5
+
+[RFC:5910]: https://tools.ietf.org/html/rfc5910
+
+[RFC:5910_section_3.3]: https://tools.ietf.org/html/rfc5910#section-3.3
+
+[IANA algorithm listing]: http://www.iana.org/assignments/dns-sec-alg-numbers/dns-sec-alg-numbers.xhtml

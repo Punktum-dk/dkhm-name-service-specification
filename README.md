@@ -105,12 +105,15 @@ DK Hostmaster currently support the following algorithms from the [IANA algorith
 - 7 RSASHA1-NSEC3-SHA1 (RSASHA1-NSEC3-SHA1)
 - 8 RSASHA256 (RSA/SHA-256)
 - 10 RSASHA512 (RSA/SHA-512)
+- 13 ECDSAP256SHA256 (ECDSA Curve P-256 with SHA-256)
+- 14 ECDSAP384SHA384 (ECDSA Curve P-384 with SHA-384)
 
 <a name="supported-digest-types"></a>
 ## Supported Digest Types
 
 - 1 SHA-1
 - 2 SHA-256
+- 4 SHA-384
 
 <a name="references"></a>
 # References

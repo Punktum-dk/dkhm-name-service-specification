@@ -22,12 +22,12 @@ Revision: 1.0 *DRAFT*
 
 <!-- /MarkdownTOC -->
 
-<a name="introduction"></a>
+<a id="introduction"></a>
 # Introduction
 
 General specification of some of the technical aspects of the DK Hostmaster DNS
 
-<a name="about-this-document"></a>
+<a id="about-this-document"></a>
 ## About this document
 
 This specification describes the DK Hostmaster General name service.
@@ -38,20 +38,20 @@ All examples provided in the document are fabricated or changed from real data t
 
 Printable version can be obtained via [this link](https://gitprint.com/DK-Hostmaster/dkhm-name-service-specification/blob/master/README.md), using the gitprint service.
 
-<a name="license"></a>
+<a id="license"></a>
 ## License
 
 This document is copyright by DK Hostmaster A/S and is licensed under the MIT License, please see the separate LICENSE file for details.
 
-<a name="the-dk-registry-in-brief"></a>
+<a id="the-dk-registry-in-brief"></a>
 ## The .dk Registry in Brief
 
 DK Hostmaster is the registry for the ccTLD for Denmark (dk). The current model used in Denmark is based on a sole registry, with DK Hostmaster maintaining the central DNS registry.
 
-<a name="name-service"></a>
+<a id="name-service"></a>
 # Name Service
 
-<a name="domain-names"></a>
+<a id="domain-names"></a>
 ## Domain Names
 
 A domain name can consist of the following characters:
@@ -65,7 +65,7 @@ A domain name can consist of the following characters:
 - Hyphen cannot be placed first or last in the domain name.
 - A domain name can not have 2 initial alphanumeric characters followed by 2 hyphens, such as: `xn--4cabco7dk5a.dk`, the IDN encoded version of the domain name: `æøåöäüé.dk` since this would indicate IDN encoding (punycode)
 
-<a name="glue-records"></a>
+<a id="glue-records"></a>
 ## Glue Records
 
 DK Hostmaster use DNS glue records as described in [draft-koch-dns-glue-clarifications] as a _narrow_ glue record policy. 
@@ -74,7 +74,7 @@ This means that a glue record is only inserted in the DK zone if a name server i
 
 An example of when glue records inserted in the DK zone:
 
-*If `ns.eksempel.dk` is name server for `eksempel.dk`, a glue record is inserted for `ns.eksempel.dk`
+* If `ns.eksempel.dk` is name server for `eksempel.dk`, a glue record is inserted for `ns.eksempel.dk`
 * If `ns.some.sub.domain.eksempel.dk` act as name server for the domain name `eksempel.dk`, a glue record is inserted for `ns.some.sub.domain.eksempel.dk`
 
 An example of when a glue record is not inserted to the DK zone:
@@ -84,17 +84,17 @@ An example of when a glue record is not inserted to the DK zone:
 
 Please note that the above names are examples and do not relate to active domain names.
 
-<a name="dnssec"></a>
+<a id="dnssec"></a>
 # DNSSEC 
 
-<a name="supported-dnssec-implementations"></a>
+<a id="supported-dnssec-implementations"></a>
 ## Supported DNSSEC implementations
 
 In accordance with [RFC:5910][RFC:5910]. DK Hostmaster only support *DS* and not *DNSKEY*. 
 
 In addition the maximum signature lifetime is not supported, for *EPP* please see [section 3.3][RFC:5910_section_3.3] in [RFC:5910][RFC:5910].
 
-<a name="supported-algorithms"></a>
+<a id="supported-algorithms"></a>
 ## Supported Algorithms
 
 DK Hostmaster currently support the following algorithms from the [IANA algorithm listing][IANA algorithm listing]:
@@ -108,14 +108,14 @@ DK Hostmaster currently support the following algorithms from the [IANA algorith
 - 13 ECDSAP256SHA256 (ECDSA Curve P-256 with SHA-256)
 - 14 ECDSAP384SHA384 (ECDSA Curve P-384 with SHA-384)
 
-<a name="supported-digest-types"></a>
+<a id="supported-digest-types"></a>
 ## Supported Digest Types
 
 - 1 SHA-1
 - 2 SHA-256
 - 4 SHA-384
 
-<a name="references"></a>
+<a id="references"></a>
 # References
 
 * [DNS Glue RR Survey and Terminology Clarification][draft-koch-dns-glue-clarifications]

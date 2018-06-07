@@ -99,6 +99,10 @@ In addition the maximum signature lifetime is not supported, for *EPP* please se
 
 DK Hostmaster currently support the following algorithms from the [IANA algorithm listing][IANA algorithm listing]:
 
+- 3 DSA (DSA/SHA1) [RFC:3110][RFC3110] - _do note that use of this algorithm is not recommended since it is deprecated_
+- 5 RSASHA1 (RSA/SHA-1) [RFC:2539][RFC2539]
+- 6 DSA-NSEC3-SHA1 (DSA-NSEC3-SHA1) [RFC:5155][RFC5155]
+- 7 RSASHA1-NSEC3-SHA1 (RSASHA1-NSEC3-SHA1) [RFC:5155][RFC5155]
 - 8 RSA/SHA-256 [RFC:5702][RFC5702]
 - 10 RSA/SHA-512 [RFC:5702][RFC5702]
 - 13 ECDSA Curve P-256 with SHA-256 [RFC:6605][RFC6605]
@@ -135,3 +139,9 @@ DK Hostmaster currently support the following algorithms from the [IANA algorith
 [RFC5702]: http://tools.ietf.org/html/rfc5702
 
 [RFC6605]: https://tools.ietf.org/html/rfc6605
+
+[RFC3110]: https://tools.ietf.org/html/rfc3110
+
+[RFC2539]: https://tools.ietf.org/html/rfc2539
+
+[RFC5155]: https://tools.ietf.org/html/rfc5155

@@ -99,21 +99,17 @@ In addition the maximum signature lifetime is not supported, for *EPP* please se
 
 DK Hostmaster currently support the following algorithms from the [IANA algorithm listing][IANA algorithm listing]:
 
-- 3 DSA (DSA/SHA1)
-- 5 RSASHA1 (RSA/SHA-1)
-- 6 DSA-NSEC3-SHA1 (DSA-NSEC3-SHA1)
-- 7 RSASHA1-NSEC3-SHA1 (RSASHA1-NSEC3-SHA1)
-- 8 RSASHA256 (RSA/SHA-256)
-- 10 RSASHA512 (RSA/SHA-512)
-- 13 ECDSAP256SHA256 (ECDSA Curve P-256 with SHA-256)
-- 14 ECDSAP384SHA384 (ECDSA Curve P-384 with SHA-384)
+- 8 RSA/SHA-256 [RFC:5702][RFC5702]
+- 10 RSA/SHA-512 [RFC:5702][RFC5702]
+- 13 ECDSA Curve P-256 with SHA-256 [RFC:6605][RFC6605]
+- 14 ECDSA Curve P-384 with SHA-384 [RFC:6605][RFC6605]
 
 <a id="supported-digest-types"></a>
 ## Supported Digest Types
 
-- 1 SHA-1
-- 2 SHA-256
-- 4 SHA-384
+- 1 SHA-1 [RFC:4509][RFC4509]
+- 2 SHA-256 [RFC:4509][RFC4509]
+- 4 SHA-384 [RFC:6605][RFC6605]
 
 <a id="references"></a>
 # References
@@ -133,3 +129,9 @@ DK Hostmaster currently support the following algorithms from the [IANA algorith
 [RFC:5910_section_3.3]: https://tools.ietf.org/html/rfc5910#section-3.3
 
 [IANA algorithm listing]: http://www.iana.org/assignments/dns-sec-alg-numbers/dns-sec-alg-numbers.xhtml
+
+[RFC4509]: http://tools.ietf.org/html/rfc4509
+
+[RFC5702]: http://tools.ietf.org/html/rfc5702
+
+[RFC6605]: https://tools.ietf.org/html/rfc6605

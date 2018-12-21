@@ -1,3 +1,5 @@
+![DK Hostmaster Logo](https://www.dk-hostmaster.dk/sites/default/files/dk-logo_0.png)
+
 # DK Hostmaster Name Service Specification
 
 2016-09-14
@@ -68,7 +70,7 @@ A domain name can consist of the following characters:
 <a id="glue-records"></a>
 ## Glue Records
 
-DK Hostmaster use DNS glue records as described in [draft-koch-dns-glue-clarifications] as a _narrow_ glue record policy. 
+DK Hostmaster use DNS glue records as described in [draft-koch-dns-glue-clarifications] as a _narrow_ glue record policy.
 
 This means that a glue record is only inserted in the DK zone if a name server is name server for the domain to which the name server itself is a child.
 
@@ -85,12 +87,12 @@ An example of when a glue record is not inserted to the DK zone:
 Please note that the above names are examples and do not relate to active domain names.
 
 <a id="dnssec"></a>
-# DNSSEC 
+# DNSSEC
 
 <a id="supported-dnssec-implementations"></a>
 ## Supported DNSSEC implementations
 
-In accordance with [RFC:5910][RFC:5910]. DK Hostmaster only support *DS* and not *DNSKEY*. 
+In accordance with [RFC:5910][RFC:5910]. DK Hostmaster only support *DS* and not *DNSKEY*.
 
 In addition the maximum signature lifetime is not supported, for *EPP* please see [section 3.3][RFC:5910_section_3.3] in [RFC:5910][RFC:5910].
 

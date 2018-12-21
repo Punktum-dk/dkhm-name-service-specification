@@ -36,7 +36,7 @@ This specification describes the DK Hostmaster General name service.
 
 This document is owned and maintained by DK Hostmaster A/S and must not be distributed without this information.
 
-All examples provided in the document are fabricated or changed from real data to demonstrate use etc. any resemblence to actual data are coincidental.
+All examples provided in the document are fabricated or changed from real data to demonstrate use etc. any resemblance to actual data are coincidental.
 
 Printable version can be obtained via [this link](https://gitprint.com/DK-Hostmaster/dkhm-name-service-specification/blob/master/README.md), using the gitprint service.
 

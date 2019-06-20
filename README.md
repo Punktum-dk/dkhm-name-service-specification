@@ -7,7 +7,7 @@ Revision: 1.0 *DRAFT*
 
 # Table of Contents
 
-<!-- MarkdownTOC bracket=round levels="1,2,3, 4" indent="  " -->
+<!-- MarkdownTOC bracket=round levels="1,2,3,4" indent="  " autolink="true" -->
 
 - [Introduction](#introduction)
   - [About this document](#about-this-document)
@@ -16,6 +16,7 @@ Revision: 1.0 *DRAFT*
 - [Name Service](#name-service)
   - [Domain Names](#domain-names)
   - [Glue Records](#glue-records)
+  - [DNS Server Domain Check](#dns-server-domain-check)
 - [DNSSEC](#dnssec)
 - [Supported DNSSEC implementations](#supported-dnssec-implementations)
   - [Supported Algorithms](#supported-algorithms)
@@ -24,12 +25,10 @@ Revision: 1.0 *DRAFT*
 
 <!-- /MarkdownTOC -->
 
-<a id="introduction"></a>
 ## Introduction
 
 General specification of some of the technical aspects of the DK Hostmaster DNS
 
-<a id="about-this-document"></a>
 ### About this document
 
 This specification describes the DK Hostmaster General name service.
@@ -40,20 +39,16 @@ All examples provided in the document are fabricated or changed from real data t
 
 Printable version can be obtained via [this link](https://gitprint.com/DK-Hostmaster/dkhm-name-service-specification/blob/master/README.md), using the gitprint service.
 
-<a id="license"></a>
 ### License
 
 This document is copyright by DK Hostmaster A/S and is licensed under the MIT License, please see the separate LICENSE file for details.
 
-<a id="the-dk-registry-in-brief"></a>
 ### The .dk Registry in Brief
 
 DK Hostmaster is the registry for the ccTLD for Denmark (dk). The current model used in Denmark is based on a sole registry, with DK Hostmaster maintaining the central DNS registry.
 
-<a id="name-service"></a>
 ## Name Service
 
-<a id="domain-names"></a>
 ### Domain Names
 
 A domain name can consist of the following characters:
@@ -66,7 +61,6 @@ A domain name can consist of the following characters:
 - Hyphen cannot be placed first or last in the domain name.
 - A domain name can not have 2 initial alphanumeric characters followed by 2 hyphens, such as: `xn--4cabco7dk5a.dk`, the IDN encoded version of the domain name: `æøåöäüé.dk` since this would indicate IDN encoding (punycode)
 
-<a id="glue-records"></a>
 ### Glue Records
 
 DK Hostmaster use DNS glue records as described in [draft-koch-dns-glue-clarifications] as a _narrow_ glue record policy.
@@ -85,17 +79,25 @@ An example of when a glue record is not inserted to the DK zone:
 
 Please note that the above names are examples and do not relate to active domain names.
 
-<a id="dnssec"></a>
+### DNS Server Domain Check
+
+The following requirements have to be met for a given domain name, when DK Hostmaster perform a given check for a domain name towards a designated name server.
+
+- The name server (host), has to be registered with the registry
+- The name server should have the status active with the registry
+- For a given domain name a set of name servers has to be defined:
+  - 2 as a minimum
+  - 7 as a maximum
+- All specified name servers has to provide a uniform response for the set of name servers defined for a given domain game
+
 ## DNSSEC
 
-<a id="supported-dnssec-implementations"></a>
 ## Supported DNSSEC implementations
 
 In accordance with [RFC:5910][RFC:5910]. DK Hostmaster only support *DS* and not *DNSKEY*.
 
 In addition the maximum signature lifetime is not supported, for *EPP* please see [section 3.3][RFC:5910_section_3.3] in [RFC:5910][RFC:5910].
 
-<a id="supported-algorithms"></a>
 ### Supported Algorithms
 
 DK Hostmaster currently support the following algorithms from the [IANA algorithm listing][IANA algorithm listing]:
@@ -109,14 +111,12 @@ DK Hostmaster currently support the following algorithms from the [IANA algorith
 - 13 ECDSA Curve P-256 with SHA-256 [RFC:6605][RFC6605]
 - 14 ECDSA Curve P-384 with SHA-384 [RFC:6605][RFC6605]
 
-<a id="supported-digest-types"></a>
 ### Supported Digest Types
 
 - 1 SHA-1 [RFC:4509][RFC4509]
 - 2 SHA-256 [RFC:4509][RFC4509]
 - 4 SHA-384 [RFC:6605][RFC6605]
 
-<a id="references"></a>
 ## References
 
 - [DNS Glue RR Survey and Terminology Clarification][draft-koch-dns-glue-clarifications]

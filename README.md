@@ -2,8 +2,6 @@
 
 # DK Hostmaster Name Service Specification
 
-![GitHub Workflow build status badge markdownlint](https://github.com/DK-Hostmaster/dkhm-name-service-specification/workflows/Markdownlint%20Workflow/badge.svg)
-
 2020-12-14
 Revision: 2.0
 

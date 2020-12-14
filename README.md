@@ -4,8 +4,8 @@
 
 ![GitHub Workflow build status badge markdownlint](https://github.com/DK-Hostmaster/dkhm-name-service-specification/workflows/Markdownlint%20Workflow/badge.svg)
 
-2016-09-14
-Revision: 1.0 *DRAFT*
+2020-12-14
+Revision: 2.0
 
 # Table of Contents
 
@@ -51,7 +51,14 @@ This document is copyright by DK Hostmaster A/S and is licensed under the MIT Li
 <a id="history"></a>
 ### Document History
 
+2.0 2020-12-14
 
+- Introducing an extension to the IDN character set supported by the DK Hostmaster registry; `ß`
+- The character is supported from the 1st. of January 2021
+
+1.0 2016-09-14
+
+- Initial revision
 
 <a id="the-dk-registry-in-brief"></a>
 ## The .dk Registry in Brief

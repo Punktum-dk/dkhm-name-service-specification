@@ -13,7 +13,7 @@ Hostmaster
 DS
 DNSKEY
 dns
-kock
+koch
 IDN
 punycode
 ccTLD

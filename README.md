@@ -14,7 +14,8 @@ Revision: 1.0 *DRAFT*
 - [Introduction](#introduction)
   - [About this document](#about-this-document)
   - [License](#license)
-  - [The .dk Registry in Brief](#the-dk-registry-in-brief)
+  - [Document History](#history)
+- [The .dk Registry in Brief](#the-dk-registry-in-brief)
 - [Name Service](#name-service)
   - [Domain Names](#domain-names)
   - [Glue Records](#glue-records)
@@ -47,8 +48,13 @@ Printable version can be obtained via [this link](https://gitprint.com/DK-Hostma
 
 This document is copyright by DK Hostmaster A/S and is licensed under the MIT License, please see the separate LICENSE file for details.
 
+<a id="history"></a>
+### Document History
+
+
+
 <a id="the-dk-registry-in-brief"></a>
-### The .dk Registry in Brief
+## The .dk Registry in Brief
 
 DK Hostmaster is the registry for the ccTLD for Denmark (dk). The current model used in Denmark is based on a sole registry, with DK Hostmaster maintaining the central DNS registry.
 
@@ -61,7 +67,7 @@ DK Hostmaster is the registry for the ccTLD for Denmark (dk). The current model 
 A domain name can consist of the following characters:
 
 - `a-z`
-- `æ`, `ø`, `å`, `ö`, `ä`, `ü` and `é`.
+- `æ`, `ø`, `å`, `ö`, `ä`, `ü`, `é` and `ß`
 - `0-9`
 - `-` (hyphen)
 
@@ -93,30 +99,30 @@ Please note that the above names are examples and do not relate to active domain
 <a id="supported-dnssec-implementations"></a>
 ## Supported DNSSEC implementations
 
-In accordance with [RFC:5910][RFC:5910]. DK Hostmaster only support *DS* and not *DNSKEY*.
+In accordance with [RFC:5910]. DK Hostmaster only support *DS* and not *DNSKEY*.
 
-In addition the maximum signature lifetime is not supported, for *EPP* please see [section 3.3][RFC:5910_section_3.3] in [RFC:5910][RFC:5910].
+In addition the maximum signature lifetime is not supported, for *EPP* please see [section 3.3][RFC:5910_section_3.3] in [RFC:5910].
 
 <a id="supported-algorithms"></a>
 ### Supported Algorithms
 
 DK Hostmaster currently support the following algorithms from the [IANA algorithm listing][IANA algorithm listing]:
 
-- 3 DSA (DSA/SHA1) [RFC:3110][RFC3110] - _do note that use of this algorithm is not recommended since it is deprecated_
-- 5 RSASHA1 (RSA/SHA-1) [RFC:2539][RFC2539]
-- 6 DSA-NSEC3-SHA1 (DSA-NSEC3-SHA1) [RFC:5155][RFC5155]
-- 7 RSASHA1-NSEC3-SHA1 (RSASHA1-NSEC3-SHA1) [RFC:5155][RFC5155]
-- 8 RSA/SHA-256 [RFC:5702][RFC5702]
-- 10 RSA/SHA-512 [RFC:5702][RFC5702]
-- 13 ECDSA Curve P-256 with SHA-256 [RFC:6605][RFC6605]
-- 14 ECDSA Curve P-384 with SHA-384 [RFC:6605][RFC6605]
+- 3 DSA (DSA/SHA1) [RFC:3110] - _do note that use of this algorithm is not recommended since it is deprecated_
+- 5 RSASHA1 (RSA/SHA-1) [RFC:2539]
+- 6 DSA-NSEC3-SHA1 (DSA-NSEC3-SHA1) [RFC:5155]
+- 7 RSASHA1-NSEC3-SHA1 (RSASHA1-NSEC3-SHA1) [RFC:5155]
+- 8 RSA/SHA-256 [RFC:5702]
+- 10 RSA/SHA-512 [RFC:5702]
+- 13 ECDSA Curve P-256 with SHA-256 [RFC:6605]
+- 14 ECDSA Curve P-384 with SHA-384 [RFC:6605]
 
 <a id="supported-digest-types"></a>
 ### Supported Digest Types
 
-- 1 SHA-1 [RFC:4509][RFC4509]
-- 2 SHA-256 [RFC:4509][RFC4509]
-- 4 SHA-384 [RFC:6605][RFC6605]
+- 1 SHA-1 [RFC:4509]
+- 2 SHA-256 [RFC:4509]
+- 4 SHA-384 [RFC:6605]
 
 <a id="references"></a>
 ## References
@@ -137,14 +143,14 @@ DK Hostmaster currently support the following algorithms from the [IANA algorith
 
 [IANA algorithm listing]: http://www.iana.org/assignments/dns-sec-alg-numbers/dns-sec-alg-numbers.xhtml
 
-[RFC4509]: http://tools.ietf.org/html/rfc4509
+[RFC:4509]: http://tools.ietf.org/html/rfc4509
 
-[RFC5702]: http://tools.ietf.org/html/rfc5702
+[RFC:5702]: http://tools.ietf.org/html/rfc5702
 
-[RFC6605]: https://tools.ietf.org/html/rfc6605
+[RFC:6605]: https://tools.ietf.org/html/rfc6605
 
-[RFC3110]: https://tools.ietf.org/html/rfc3110
+[RFC:3110]: https://tools.ietf.org/html/rfc3110
 
-[RFC2539]: https://tools.ietf.org/html/rfc2539
+[RFC:2539]: https://tools.ietf.org/html/rfc2539
 
-[RFC5155]: https://tools.ietf.org/html/rfc5155
+[RFC:5155]: https://tools.ietf.org/html/rfc5155

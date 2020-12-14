@@ -1,5 +1,7 @@
 ![DK Hostmaster Logo](https://www.dk-hostmaster.dk/sites/default/files/dk-logo_0.png)
 
+![Spellcheck Action](https://github.com/DK-Hostmaster/dkhm-name-service-specification/workflows/Spellcheck%20Action/badge.svg)
+![Markdownlint Action](https://github.com/DK-Hostmaster/dkhm-name-service-specification/workflows/Markdownlint%20Action/badge.svg)
 # DK Hostmaster Name Service Specification
 
 2016-09-14

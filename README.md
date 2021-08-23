@@ -4,8 +4,8 @@
 ![Markdownlint Action](https://github.com/DK-Hostmaster/dkhm-name-service-specification/workflows/Markdownlint%20Action/badge.svg)
 # DK Hostmaster Name Service Specification
 
-2020-12-14
-Revision: 2.0
+2021-08-23
+Revision: 2.1
 
 # Table of Contents
 
@@ -19,6 +19,8 @@ Revision: 2.0
 - [Name Service](#name-service)
   - [Domain Names](#domain-names)
   - [Glue Records](#glue-records)
+  - [Required Amount of Name Servers](#required-amount-of-name-servers)
+  - [Required Responsiveness](#required-responsiveness)
 - [DNSSEC](#dnssec)
 - [Supported DNSSEC implementations](#supported-dnssec-implementations)
   - [Supported Algorithms](#supported-algorithms)
@@ -50,6 +52,12 @@ This document is copyright by DK Hostmaster A/S and is licensed under the MIT Li
 
 <a id="history"></a>
 ### Document History
+
+2.1 2021-08-23
+
+- Added section and clarification on the minimum and maximum number of name servers for a given domain name
+- Added section and clarification on the requirement for name servers to be responsive for a given domain name
+- More information on the topics will be added later
 
 2.0 2020-12-14
 
@@ -99,6 +107,24 @@ An example of when a glue record is not inserted to the DK zone:
 - If `ns1.enisp.dk` is name server for `eksempel.dk` a glue record is not inserted for `ns1.enisp.dk`, unless if the name server is also name server for `enisp.dk`.
 
 Please note that the above names are examples and do not relate to active domain names.
+
+<a id="required-amount-of-name-servers"></a>
+### Required Amount of Name Servers
+
+The minimum required number of name servers for a domain name registered with the DK Hostmaster registry is 2.
+
+Specifying fewer name servers at either registration time or in a name server change operation will result in an error.
+
+The maximum number of name servers for a domain name registered with the DK Hostmaster registry is 13.
+
+Specifying more name servers at either registration time or in a name server change operation will result in an error.
+
+<a id="required-responsiveness"></a>
+### Required Responsiveness
+
+At least two of the name servers specified at registration time or via a name server change operation are queried for responsiveness and the name servers have to respond for the domain name in question.
+
+Failure to adhere to this rule can result in error for the designated operation.
 
 <a id="dnssec"></a>
 ## DNSSEC

@@ -4,8 +4,8 @@
 ![Markdownlint Action](https://github.com/DK-Hostmaster/dkhm-name-service-specification/workflows/Markdownlint%20Action/badge.svg)
 # DK Hostmaster Name Service Specification
 
-2021-08-23
-Revision: 2.1
+2021-08-24
+Revision: 2.2
 
 # Table of Contents
 
@@ -52,6 +52,10 @@ This document is copyright by DK Hostmaster A/S and is licensed under the MIT Li
 
 <a id="history"></a>
 ### Document History
+
+2.2 2021-08-24
+
+- Corrected maximum number of name servers after feedback, the maximum number has not been increased at the time of writing
 
 2.1 2021-08-23
 
@@ -115,7 +119,7 @@ The minimum required number of name servers for a domain name registered with th
 
 Specifying fewer name servers at either registration time or in a name server change operation will result in an error.
 
-The maximum number of name servers for a domain name registered with the DK Hostmaster registry is 13.
+The maximum number of name servers for a domain name registered with the DK Hostmaster registry is 7.
 
 Specifying more name servers at either registration time or in a name server change operation will result in an error.
 

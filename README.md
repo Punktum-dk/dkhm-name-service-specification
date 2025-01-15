@@ -1,11 +1,11 @@
-![DK Hostmaster Logo](https://www.dk-hostmaster.dk/sites/default/files/dk-logo_0.png)
+![Punktum dk Logo](https://punktum.dk/sites/default/files/logo/dk_logo_symbol_1.png)
 
-![Spellcheck Action](https://github.com/DK-Hostmaster/dkhm-name-service-specification/workflows/Spellcheck%20Action/badge.svg)
-![Markdownlint Action](https://github.com/DK-Hostmaster/dkhm-name-service-specification/workflows/Markdownlint%20Action/badge.svg)
-# DK Hostmaster Name Service Specification
+![Spellcheck Action]https://github.com/Punktum-dk/dkhm-name-service-specification/workflows/Spellcheck%20Action/badge.svg)
+![Markdownlint Action]https://github.com/Punktum-dk/dkhm-name-service-specification/workflows/Markdownlint%20Action/badge.svg)
+# Punktum dk Name Service Specification
 
-2021-08-24
-Revision: 2.2
+2024-11-28
+Revision: 2.3
 
 # Table of Contents
 
@@ -32,14 +32,14 @@ Revision: 2.2
 <a id="introduction"></a>
 ## Introduction
 
-General specification of some of the technical aspects of the DK Hostmaster DNS
+General specification of some of the technical aspects of the Punktum dk DNS
 
 <a id="about-this-document"></a>
 ### About this document
 
-This specification describes the DK Hostmaster General name service.
+This specification describes the Punktum dk General name service.
 
-This document is owned and maintained by DK Hostmaster A/S and must not be distributed without this information.
+This document is owned and maintained by Punktum dk A/S and must not be distributed without this information.
 
 All examples provided in the document are fabricated or changed from real data to demonstrate use etc. any resemblance to actual data are coincidental.
 
@@ -48,10 +48,14 @@ Printable version can be obtained via [this link](https://gitprint.com/DK-Hostma
 <a id="license"></a>
 ### License
 
-This document is copyright by DK Hostmaster A/S and is licensed under the MIT License, please see the separate LICENSE file for details.
+This document is copyright by Punktum dk A/S and is licensed under the MIT License, please see the separate LICENSE file for details.
 
 <a id="history"></a>
 ### Document History
+
+2.3 2024-11-28
+
+- Added algorithm 15 and 16 to the list of supported DNSSEC algortihms
 
 2.2 2021-08-24
 
@@ -75,7 +79,7 @@ This document is copyright by DK Hostmaster A/S and is licensed under the MIT Li
 <a id="the-dk-registry-in-brief"></a>
 ## The .dk Registry in Brief
 
-DK Hostmaster is the registry for the ccTLD for Denmark (dk). The current model used in Denmark is based on a sole registry, with DK Hostmaster maintaining the central DNS registry.
+Punktum dk is the administrator for domain names ending in .dk. We keep track of all .dk domains and work to ensure that the Danish part of the internet is as secure as possible.
 
 <a id="name-service"></a>
 ## Name Service
@@ -96,7 +100,7 @@ A domain name can consist of the following characters:
 <a id="glue-records"></a>
 ### Glue Records
 
-DK Hostmaster use DNS glue records as described in [draft-koch-dns-glue-clarifications] as a _narrow_ glue record policy.
+Punktum dk use DNS glue records as described in [draft-koch-dns-glue-clarifications] as a _narrow_ glue record policy.
 
 This means that a glue record is only inserted in the DK zone if a name server is name server for the domain to which the name server itself is a child.
 
@@ -115,11 +119,11 @@ Please note that the above names are examples and do not relate to active domain
 <a id="required-amount-of-name-servers"></a>
 ### Required Amount of Name Servers
 
-The minimum required number of name servers for a domain name registered with the DK Hostmaster registry is 2.
+The minimum required number of name servers for a domain name registered with the Punktum dk registry is 2.
 
 Specifying fewer name servers at either registration time or in a name server change operation will result in an error.
 
-The maximum number of name servers for a domain name registered with the DK Hostmaster registry is 7.
+The maximum number of name servers for a domain name registered with the Punktum dk registry is 7.
 
 Specifying more name servers at either registration time or in a name server change operation will result in an error.
 
@@ -136,14 +140,14 @@ Failure to adhere to this rule can result in error for the designated operation.
 <a id="supported-dnssec-implementations"></a>
 ## Supported DNSSEC implementations
 
-In accordance with [RFC:5910]. DK Hostmaster only support *DS* and not *DNSKEY*.
+In accordance with [RFC:5910]. Punktum dk only support *DS* and not *DNSKEY*.
 
 In addition the maximum signature lifetime is not supported, for *EPP* please see [section 3.3][RFC:5910_section_3.3] in [RFC:5910].
 
 <a id="supported-algorithms"></a>
 ### Supported Algorithms
 
-DK Hostmaster currently support the following algorithms from the [IANA algorithm listing][IANA algorithm listing]:
+Punktum dk currently support the following algorithms from the [IANA algorithm listing][IANA algorithm listing]:
 
 - 3 DSA (DSA/SHA1) [RFC:3110] - _do note that use of this algorithm is not recommended since it is deprecated_
 - 5 RSASHA1 (RSA/SHA-1) [RFC:2539]
@@ -153,6 +157,8 @@ DK Hostmaster currently support the following algorithms from the [IANA algorith
 - 10 RSA/SHA-512 [RFC:5702]
 - 13 ECDSA Curve P-256 with SHA-256 [RFC:6605]
 - 14 ECDSA Curve P-384 with SHA-384 [RFC:6605]
+- 15 Ed25519 [RFC:8709]
+- 16 Ed448  [RFC:8709]
 
 <a id="supported-digest-types"></a>
 ### Supported Digest Types
@@ -184,7 +190,9 @@ DK Hostmaster currently support the following algorithms from the [IANA algorith
 
 [RFC:5702]: http://tools.ietf.org/html/rfc5702
 
-[RFC:6605]: https://tools.ietf.org/html/rfc6605
+[RFC:6605]: https://tools.ietf.org/html/rfc8709
+
+[RFC:8709]: https://tools.ietf.org/html/rfc6605
 
 [RFC:3110]: https://tools.ietf.org/html/rfc3110
 

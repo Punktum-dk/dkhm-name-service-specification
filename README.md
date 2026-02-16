@@ -4,8 +4,8 @@
 ![Markdownlint Action]https://github.com/Punktum-dk/dkhm-name-service-specification/workflows/Markdownlint%20Action/badge.svg)
 # Punktum dk Name Service Specification
 
-2024-11-28
-Revision: 2.3
+2026-01-28
+Revision: 2.4
 
 # Table of Contents
 
@@ -53,6 +53,11 @@ This document is copyright by Punktum dk A/S and is licensed under the MIT Licen
 <a id="history"></a>
 ### Document History
 
+2.4 2026-01-28
+
+- Removed algorithm 3, 5, 6, 7 and 10 from the list of supported DNSSEC algortihms.
+- Removed SHA-1 from the list of supported DNSSEC digest types.
+  
 2.3 2024-11-28
 
 - Added algorithm 15 and 16 to the list of supported DNSSEC algortihms
@@ -149,12 +154,7 @@ In addition the maximum signature lifetime is not supported, for *EPP* please se
 
 Punktum dk currently support the following algorithms from the [IANA algorithm listing][IANA algorithm listing]:
 
-- 3 DSA (DSA/SHA1) [RFC:3110] - _do note that use of this algorithm is not recommended since it is deprecated_
-- 5 RSASHA1 (RSA/SHA-1) [RFC:2539]
-- 6 DSA-NSEC3-SHA1 (DSA-NSEC3-SHA1) [RFC:5155]
-- 7 RSASHA1-NSEC3-SHA1 (RSASHA1-NSEC3-SHA1) [RFC:5155]
 - 8 RSA/SHA-256 [RFC:5702]
-- 10 RSA/SHA-512 [RFC:5702]
 - 13 ECDSA Curve P-256 with SHA-256 [RFC:6605]
 - 14 ECDSA Curve P-384 with SHA-384 [RFC:6605]
 - 15 Ed25519 [RFC:8709]
@@ -163,7 +163,6 @@ Punktum dk currently support the following algorithms from the [IANA algorithm l
 <a id="supported-digest-types"></a>
 ### Supported Digest Types
 
-- 1 SHA-1 [RFC:4509]
 - 2 SHA-256 [RFC:4509]
 - 4 SHA-384 [RFC:6605]
 

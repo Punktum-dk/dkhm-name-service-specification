@@ -1,7 +1,5 @@
 ![Punktum dk Logo](https://punktum.dk/sites/default/files/logo/dk_logo_symbol_1.png)
 
-![Spellcheck Action]https://github.com/Punktum-dk/dkhm-name-service-specification/workflows/Spellcheck%20Action/badge.svg)
-![Markdownlint Action]https://github.com/Punktum-dk/dkhm-name-service-specification/workflows/Markdownlint%20Action/badge.svg)
 # Punktum dk Name Service Specification
 
 2026-01-28
